@@ -1,0 +1,10 @@
+<h1>画像投稿フォーム</h1>
+<%= form_with model: @book, local:true do |f| %>
+  <h4>Image</h4>
+  <%= f.attachment_field :image %>
+  <h4>Name</h4>
+  <%= f.text_field :name %>
+  <h4>introduction</h4>
+  <%= f.text_area :self_introduction %>
+  <%= f.submit 'Post' %>
+<% end %>

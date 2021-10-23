@@ -29,10 +29,10 @@ protect_from_forgery
 
   def edit
      @book = Book.find(params[:id])
-  if @book != current_user
-     render :edit
+  if @book.user_id != current_user.id
+     redirect_to books_path
   else
-    redirect_to books_path
+     render :edit
   end
   end
 
